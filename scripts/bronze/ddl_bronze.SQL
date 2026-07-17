@@ -8,6 +8,8 @@ Script Purpose:
 ====================================================================================================
 */
 
+USE DataWarehouse
+
 IF OBJECT_ID ('bronze.crm_cust_info', 'U') IS NOT NULL
 	DROP TABLE bronze.crm_cust_info;
 GO
@@ -20,6 +22,7 @@ CREATE TABLE bronze.crm_cust_info (
     cst_gndr NVARCHAR (50),
     cst_create_date DATE
 );
+GO
 
 IF OBJECT_ID ('bronze.crm_prd_info', 'U') IS NOT NULL
 	DROP TABLE bronze.crm_prd_info;
@@ -49,8 +52,8 @@ CREATE TABLE bronze.crm_sales_details (
 	sls_quantity INT,
 	sls_price INT
 );
-GO 
-  
+GO
+
 IF OBJECT_ID ('bronze.erp_cust_az12', 'U') IS NOT NULL
 	DROP TABLE bronze.erp_cust_az12;
 GO
